@@ -1,4 +1,4 @@
-# OddsScrapr
+# OddsScraper
 Modular GenServer for fault tolerent webscraping of odds data from various popular sites and bookmakers.
 The Scraper is set to scraper MLB odds and can be configured to any sport.
 
