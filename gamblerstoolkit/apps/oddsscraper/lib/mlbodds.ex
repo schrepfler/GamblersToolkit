@@ -57,6 +57,7 @@ defmodule MlbOdds.Oracle do
     {:ok, %{config: config, names: names, refs: refs, payload: payload, agents: agents}}
   end
 
+  ## Handle Server Responses
   def handle_call(:getstate, _From, state) do
     {:reply, state, state}
   end
@@ -70,7 +71,7 @@ defmodule MlbOdds.Oracle do
     ## Cycle through scrapers
     ############################
     Enum.each(MlbOdds.DynamicSupervisor.children(), fn scraper ->
-      pid = scraper |> elem(1)
+      pid = scraper |> elem(1)  ##get process id
 
       Agent.update(pid, fn _state ->
         %{born: DateTime.utc_now(), last_updated: DateTime.utc_now(), payload: %{}, date: date}
@@ -105,15 +106,18 @@ defmodule MlbOdds.Oracle do
   @doc """
   Handle a :DOWN message
   """
-  def handle_info({:DOWN, _ref, :process, _, _}, state) do
+  def handle_info({:DOWN, ref, :process, _, _}, state) do
     Logger.info("DOWN")
-    {:noreply, state}
+    {name, new_refs} = Map.pop(state.refs, ref)
+    new_names = Map.delete(state.names, name)
+    {:noreply, %{state | refs: new_refs, names: new_names}}
   end
 
   @doc """
   Handle the repeating work function
   """
   def handle_info(:work, state) do
+    ##zombie check
     new_state =
       Enum.map(state|>Map.get(:agents), fn agent ->
         case Map.has_key?(state.names, agent) do
@@ -137,7 +141,6 @@ defmodule MlbOdds.Oracle do
     ## Rerun the scraper.
     schedule_scrapers()
 
-    ## Return the State
     {:noreply, new_state}
   end
 

@@ -42,13 +42,6 @@ defmodule MlbOdds.SBRAgent do
     Agent.update(__MODULE__, &Map.put(&1, key, value))
   end
 
-  @doc """
-  Crash spun up
-  """
-  def crash() do
-    Agent.stop(__MODULE__, :shutdown)
-  end
-
   ################################
   ## Fetch
   ################################
@@ -116,7 +109,8 @@ defmodule MlbOdds.SBRAgent do
                 "mlb-",
                 gamenum |> Integer.to_string()
               ])
-
+            
+            ##Return and Odds map for this game.
             Map.put(acc, gid, %{
               gid: gid,
               awayml: oddsa,
