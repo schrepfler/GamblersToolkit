@@ -2,7 +2,7 @@
 Modular GenServer for fault tolerent webscraping of odds data from various popular sites and bookmakers.
 The Scraper is set to scraper MLB odds and can be configured to any sport.
 
-![Image of Greyjoy](https://i.ytimg.com/vi/nEXZQmA8Yj4/maxresdefault.jpg|width=300)
+![Image of Greyjoy](https://i.ytimg.com/vi/nEXZQmA8Yj4/maxresdefault.jpg =80x45)
 
 ## Installation
 * Install Ubuntu, Erlang and Elixir on your computer.
