@@ -18,6 +18,9 @@ Change the line:
 
 > config: hound, driver: chromedriver ( or selenium)
 
+## Start the Server
+> iex -S mix
+
 # Functions
 
 ### MlbOdds.Oracle
