@@ -51,7 +51,7 @@ The Oracle is a Genserver which acts as a resgistry for dynamically supervised s
  
 ### Usage
 
-** Getting Odds **
-Simply get the state of the scraper to return the state, updated ever 5 seconds.
+**Getting Odds**  
+Simply get the state of the scraper to return the state, updated every 5 seconds.
 > MlbOdds.SBRAgent.get_state
 
