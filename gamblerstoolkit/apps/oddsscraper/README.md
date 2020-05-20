@@ -2,6 +2,9 @@
 Modular GenServer for fault tolerent webscraping of odds data from various popular sites and bookmakers.
 The Scraper is set to scraper MLB odds and can be configured to any sport.
 
+![Image of Greyjoy]
+(https://i.ytimg.com/vi/nEXZQmA8Yj4/maxresdefault.jpg)
+
 ## Installation
 * Install Ubuntu, Erlang and Elixir on your computer.
 * Install Phantom.js or Chrome headless Browser
@@ -44,3 +47,10 @@ The Oracle is a Genserver which acts as a resgistry for dynamically supervised s
 &nbsp;&nbsp;**Arity:** (1)  
 &nbsp;&nbsp;&nbsp;&nbsp;**Date <sigil>:**  A scraping agent in the MlbOdds NameSpace,  located in the scrapers folder  
 &nbsp;&nbsp;&nbsp;&nbsp;> *eg:  ~D[2019-03-28]  
+ 
+### Usage
+
+** Getting Odds **
+Simply get the state of the scraper to return the state, updated ever 5 seconds.
+> MlbOdds.SBRAgent.get_state
+
