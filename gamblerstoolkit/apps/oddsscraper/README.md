@@ -16,8 +16,8 @@ much more robust for MLB when I find more time.
 ## Start PhantomJs in Bash (you may use Chrome if you like) 
 Run Phantom.js in a bash shell screen instance
 
-> sudo screen -S phantomJS  
-> <screen> xvfb-run phantomjs --wd  
+> *sudo screen -S phantomJS*  
+> *<screen> xvfb-run phantomjs --wd* 
  
 If you use Chrome Headless Browser or selenium then you have to configure it in config/config.ex  
 Change the line:  
