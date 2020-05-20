@@ -21,10 +21,10 @@ Run Phantom.js in a bash shell screen instance
  
 If you use Chrome Headless Browser or selenium then you have to configure it in config/config.ex  
 Change the line:  
-> config: hound, driver: chromedriver ( or selenium)
+> *config: hound, driver: chromedriver ( or selenium)*
 
 ## Start the Server
-> iex -S mix
+> *iex -S mix*
 
 # Functions
 
