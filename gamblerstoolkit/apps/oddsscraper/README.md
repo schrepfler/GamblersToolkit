@@ -31,13 +31,13 @@ The Oracle is a Genserver which acts as a resgistry for dynamically supervised s
 &nbsp;&nbsp;&nbsp;&nbsp;Agent:  A scraping agent in the MlbOdds NameSpace,  located in the scrapers folder  
 &nbsp;&nbsp;&nbsp;&nbsp;> *eg:  MlbOdds.SBRAgent*  
 
-&nbsp;&nbsp;**Function:** get_state()
-&nbsp;&nbsp;**Purpose:**  gets the state which is a registry of supervised scrapers. 
-&nbsp;&nbsp;**Arity:** (0)
+&nbsp;&nbsp;**Function:** get_state()  
+&nbsp;&nbsp;**Purpose:**  gets the state which is a registry of supervised scrapers.  
+&nbsp;&nbsp;**Arity:** (0)  
 
 
-&nbsp;&nbsp;**Function:** swap_date(date)
+&nbsp;&nbsp;**Function:** swap_date(date)  
 &nbsp;&nbsp;**Purpose:** swaps out the date in all agents and gets the odds for that day  
-&nbsp;&nbsp;**Arity:** (1)
-&nbsp;&nbsp;&nbsp;&nbsp;**Date <sigil>:**  A scraping agent in the MlbOdds NameSpace,  located in the scrapers folder
-&nbsp;&nbsp;&nbsp;&nbsp;> *eg:  ~D[2019-03-28]
+&nbsp;&nbsp;**Arity:** (1)  
+&nbsp;&nbsp;&nbsp;&nbsp;**Date <sigil>:**  A scraping agent in the MlbOdds NameSpace,  located in the scrapers folder  
+&nbsp;&nbsp;&nbsp;&nbsp;> *eg:  ~D[2019-03-28]  
