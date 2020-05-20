@@ -25,11 +25,11 @@ The Oracle is a Genserver which acts as a resgistry for dynamically supervised s
 
 #### Functions
 
-**Function:** odds_axlotl(agent)  
-**Purpose:**  creates a new scraping agent  
-**Arity:** (1)  
-> Agent:  A scraping agent in the MlbOdds NameSpace,  located in the scrapers folder  
-> *eg:  MlbOdds.SBRAgent*  
+&nbsp;&nbsp;**Function:** odds_axlotl(agent)  
+&nbsp;&nbsp;**Purpose:**  creates a new scraping agent  
+&nbsp;&nbsp;**Arity:** (1)  
+&nbsp;&nbsp;&nbsp;&nbsp;Agent:  A scraping agent in the MlbOdds NameSpace,  located in the scrapers folder  
+&nbsp;&nbsp;&nbsp;&nbsp;> *eg:  MlbOdds.SBRAgent*  
 
 > Function: get_state()
 > Purpose:  gets the state which is a registry of supervised scrapers. 
