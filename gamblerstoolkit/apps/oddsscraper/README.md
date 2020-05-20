@@ -1,25 +1,27 @@
-# Mlbodds
-
-An autonomous odd state generator pulling data from many to one sources.
-The odds Oracle generates a dynamic supervisor and scrapes multiple websites 
-from the lib/scrapers folder.   The results are passed onto the dynamic supervisor
-which syhthesizes many results into the best possible representation of the markets
-odds.
+# OddsScrapr
+Modular GenServer for fault tolerent webscraping of odds data from various popular sites and bookmakers.
+The Scraper is set to scraper MLB odds and can be configured to any sport.
 
 ## Installation
+* Install Ubuntu, Erlang and Elixir on your computer.
+* Install Phantom.js or Chrome headless Browser
+* Install xvfb
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `nbaodds` to your list of dependencies in `mix.exs`:
+## Start PhantomJs in Bash (you may use Chrome if you like) 
+> sudo screen -S phantomJS
+> <screen> xvfb-run phantomjs --wd
+  
+If you use Chrome Headless Browser or selenium then you have to configure it in config/config.ex
+Change the line: 
+> config: hound, driver: chromedriver ( or selenium)
 
-```elixir
-def deps do
-  [
-    {:mlbodds, "~> 0.1.0"}
-  ]
-end
-```
+# Functions
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/nbaodds](https://hexdocs.pm/nbaodds).
+### MlbOdds.Oracle
+The Oracle is a Genserver which acts as a resgistry for dynamically supervised scrapers
 
+#### Functions
+> Function: odds_axlotl(agent)
+> Arity: (1)
+>> agent:  A scraping agent in the MlbOdds NameSpace,  located in the scrapers folder
+>> eg:  MlbOdds.SBRAgent
